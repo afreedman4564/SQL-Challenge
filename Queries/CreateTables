@@ -1,0 +1,38 @@
+-- DROP TABLE dept_emp;
+
+CREATE TABLE departments (
+dept_no VARCHAR(5) PRIMARY KEY,
+dept_name VARCHAR (25))
+;
+
+-- use constraint to create primary key based on two features
+CREATE TABLE dept_emp (
+CONSTRAINT emp_dept PRIMARY KEY (emp_no, dept_no),
+emp_no SERIAL,
+dept_no VARCHAR (5))
+;
+
+CREATE TABLE dept_manager (
+dept_no VARCHAR (5),
+emp_no SERIAL PRIMARY KEY)
+;
+
+CREATE TABLE employees (
+emp_no SERIAL PRIMARY KEY,
+emp_title_id VARCHAR (5),
+birth_date DATE,
+first_name VARCHAR(30),
+last_name VARCHAR(30),
+sex VARCHAR (1),
+hire_date DATE)
+;
+
+CREATE TABLE salaries (
+emp_no SERIAL PRIMARY KEY,
+salary int)
+;
+
+CREATE TABLE titles (
+title_id VARCHAR PRIMARY KEY,
+title VARCHAR (20))
+;
