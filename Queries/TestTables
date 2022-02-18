@@ -3,11 +3,7 @@ FROM departments
 LIMIT 10;
 
 SELECT *
-FROM dept_emp
-LIMIT 10;
-
-SELECT *
-FROM dept_manager
+FROM titles
 LIMIT 10;
 
 SELECT *
@@ -19,5 +15,11 @@ FROM salaries
 LIMIT 10;
 
 SELECT *
-FROM titles
+FROM dept_emp
 LIMIT 10;
+
+SELECT *
+FROM dept_manager
+LIMIT 10;
+
+
