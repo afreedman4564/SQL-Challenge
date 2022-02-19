@@ -16,7 +16,7 @@
 -- ;
 
 
--- CREATE VIEW emp_view AS
+-- CREATE TABLE emp_salary AS
 SELECT e.emp_no,
 e.last_name,
 e.first_name,
@@ -183,3 +183,41 @@ FROM employees
 GROUP BY last_name
 ORDER BY "Last Name Number" DESC
 ;
+
+SELECT salary, count(1)
+FROM salaries
+GROUP BY salary
+ORDER BY salary
+;
+
+-- BONUS. 
+-- 1. Import the SQL database into Pandas.
+-- 2. Create a histogram to visualize the most common salary ranges for employees.
+-- o requires employees and salary data
+-- 3. Create a bar chart of average salary by title.
+-- o requires merging employee
+
+-- Create table, merging employees, salary and titles on emp_no and title_id/emp_title_id respectively
+-- Order by salary
+DROP TABLE IF EXISTS salary_comb;
+CREATE TABLE salary_comb AS
+SELECT e.emp_no, e.emp_title_id, s.salary, t.title,
+CASE WHEN s.salary = 40000 THEN '40000'
+	WHEN s.salary BETWEEN 40001 AND 49999 THEN '40001 TO 49999'
+	WHEN s.salary BETWEEN 50001 AND 59999 THEN '50001 TO 59999'
+	WHEN s.salary BETWEEN 60001 AND 69999 THEN '60001 TO 69999'
+	WHEN s.salary BETWEEN 70001 AND 79999 THEN '70001 TO 79999'
+	WHEN s.salary BETWEEN 80001 AND 89999 THEN '80001 TO 89999'
+	WHEN s.salary BETWEEN 90001 AND 99999 THEN '90001 TO 99999'
+	WHEN s.salary BETWEEN 100001 AND 109999 THEN '100001 TO 109999'
+	WHEN s.salary BETWEEN 110001 AND 119999 THEN '110001 TO 119999'
+	WHEN s.salary >= 120001 THEN '120001+'
+	END AS salary_cat
+FROM employees AS e
+JOIN salaries as s
+ON (e.emp_no = s.emp_no)
+	JOIN titles AS t
+	ON (e.emp_title_id = t.title_id)
+ORDER BY s.salary
+;
+

@@ -68,3 +68,4 @@ REFERENCES "Departments" ("dept_no");
 ALTER TABLE "Salaries" ADD CONSTRAINT "fk_Salaries_emp_no" FOREIGN KEY("emp_no")
 REFERENCES "Employees" ("emp_no");
 
+

@@ -22,4 +22,7 @@ SELECT *
 FROM dept_manager
 LIMIT 10;
 
+SELECT COUNT(emp_no)
+FROM salary_comb
+;
 
