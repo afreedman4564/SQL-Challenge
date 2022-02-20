@@ -32,6 +32,7 @@
 ### Data exploration
 - use sql to perform general assessment of data to confirm accurate pulls
 - employee counts from employee table
+
 ![](/Images/CountEmployeesTable.png)
 
 - salary sum from salary table
