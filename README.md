@@ -34,7 +34,7 @@
 ![](/Images/CountEmployeesTable.png)
 
 - salary sum
-
+![](/Images/SalaryTotalSalaryTableTest.png)
 
 - employee count by last name
 
