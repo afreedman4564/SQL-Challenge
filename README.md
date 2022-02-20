@@ -3,7 +3,7 @@
 ## Data modelling
 - tool used:
 - sketch out logical erd to capture the relational schema
-![]Images/CountbyLastName.PNG
+![](/ERD/Pewlett%20Hackard%20ERD%20-%20Logical.png)
 
 
 - physical erd, noting primary, foreign keys as well as data types
