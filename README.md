@@ -37,7 +37,7 @@
 
 - salary sum from salary table
 
-![](/Images/SalaryTotalSalaryTableTest.png)
+![](/Images/SalaryTotalSalaryTable.png)
 
 
 ## Perform below data analyses using postgres:
