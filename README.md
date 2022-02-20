@@ -7,6 +7,7 @@
 
 
 - physical erd, noting primary, foreign keys as well as data types
+![](/ERD/Pewlett%20Hackard%20ERD%20-%20Physical.png)
 
 ## Data engineering
 - leverage postgres to create table
@@ -30,15 +31,13 @@
 ## Data Analysis
 ### Data exploration
 - use sql to perform general assessment of data to confirm accurate pulls
-- employee counts
-![](/Images/CountEmployeesTable.png)
+- employee counts from employee table
 
-- salary sum
+
+
+- salary sum from salary table
 
 ![](/Images/SalaryTotalSalaryTableTest.png)
-
-- employee count by last name
-
 
 
 ## Perform below data analyses using postgres:
@@ -71,4 +70,16 @@
 ### 7. List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
 
 ### 8. In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
+
+## Bonus
+### 1. Import the SQL database into Pandas.
+     o Create table, merging employees, salary and titles on emp_no and title_id/emp_title_id respectively
+     o Order by salary
+
+### 2. Create a histogram to visualize the most common salary ranges for employees.
+     
+     
+### 3. Create a bar chart of average salary by title.
+    
+    
 

@@ -1,22 +1,21 @@
 -- 1. List the following details of each employee: employee number, last name, first name, sex, and salary.
 -- calculate employee count overall, by last_name, sex and emp_title
-SELECT last_name, COUNT(emp_no)
-FROM employees
-GROUP BY last_name
-ORDER BY COUNT(emp_no) DESC
-;
+-- SELECT last_name, COUNT(emp_no)
+-- FROM employees
+-- GROUP BY last_name
+-- ORDER BY COUNT(emp_no) DESC
+-- ;
 
-SELECT COUNT(emp_no)
-FROM employees
-;
+-- SELECT COUNT(emp_no)
+-- FROM employees
+-- ;
 
 -- calculate total salary
-SELECT SUM(salary)
-FROM salaries
-;
+-- SELECT SUM(salary)
+-- FROM salaries
+-- ;
 
-
--- CREATE TABLE emp_salary AS
+-- CREATE VIEW emp_view AS
 SELECT e.emp_no,
 e.last_name,
 e.first_name,
@@ -47,20 +46,13 @@ ON e.emp_no = s.emp_no
 		-- ;
 
 		-- Generate list of those hired in 1986
-		SELECT emp_no,
-		first_name AS First,
+		SELECT first_name AS First,
 		last_name AS Last,
 		hire_date,
 		extract(YEAR from hire_date) AS Year
 		FROM employees
 		WHERE extract(YEAR from hire_date) = 1986
 		;
-
-		-- Test only 1986 hires appear
-		-- SELECT extract(YEAR from hire_date) AS Year, COUNT(emp_no)
-		-- FROM employees
-		-- GROUP BY Year
-		-- ;
 	
 -- 3. List the manager of each department with the following information: 
 -- 		department number
@@ -99,12 +91,12 @@ ON (m.dept_no = d.dept_no)
 -- ORDER BY COUNT(dept_no) DESC
 -- ;
 
--- DROP VIEW dept_emp_count;
+-- DROP VIEW IF EXISTS dept_emp_count;
 -- CREATE VIEW dept_emp_count AS
-SELECT e.emp_no AS "Employee Number",
+SELECT e.emp_no,
 e.last_name AS "Last Name",
 e.first_name AS "First Name",
-ds.dept_name AS "Department Name"
+ds.dept_name 
 FROM employees AS e
 JOIN dept_emp as d
 ON (e.emp_no = d.emp_no)
@@ -182,10 +174,4 @@ SELECT last_name, COUNT(last_name) AS "Last Name Number"
 FROM employees
 GROUP BY last_name
 ORDER BY "Last Name Number" DESC
-;
-
-SELECT salary, count(1)
-FROM salaries
-GROUP BY salary
-ORDER BY salary
 ;
