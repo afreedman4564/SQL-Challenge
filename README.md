@@ -1,7 +1,7 @@
 # SQL-Challenge
 
 ## Data modelling
-- tool used:
+- Quick Database Design website leveraged: https://app.quickdatabasediagrams.com/#/
 - sketch out logical erd to capture the relational schema
 ![](/ERD/Pewlett%20Hackard%20ERD%20-%20Logical.png)
 
